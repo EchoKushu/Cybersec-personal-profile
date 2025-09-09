@@ -883,7 +883,7 @@
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
+                <h2>Get A Quick Quote</h2>
                 <div class="underline"></div>
             </div>
             <div class="contact-container">
@@ -917,7 +917,7 @@
                     </div>
                 </div>
                 <div class="contact-form-container">
-                    <form id="contact-form">
+                    <form id="contact-form" action="https://formspree.io/f/mzzaornv" method="POST">
                         <div class="form-group">
                             <input type="text" id="name" placeholder="Your Name" required>
                         </div>
@@ -925,12 +925,15 @@
                             <input type="email" id="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="subject" placeholder="Subject" required>
+                            <input type="text" id="subject" placeholder="Company Name" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" placeholder="Your Message" required></textarea>
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
                         </div>
-                        <button type="submit" class="btn primary-btn">Send Message</button>
+                        <div class="form-group">
+                            <textarea id="message" placeholder="Please type your query" required></textarea>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Contact me with a Quote</button>
                     </form>
                 </div>
             </div>
