@@ -1251,7 +1251,7 @@ footer {
     height: 50px;
     border-radius: 50%;
     background-color: var(--tertiary-dark);
-    display: flex;
+    display: none !important;
     align-items: center;
     justify-content: center;
     cursor: pointer;
@@ -1271,7 +1271,7 @@ footer {
 }
 
 .theme-toggle .fa-sun {
-    display: none;
+    display: none !important;
 }
 
 /* Light theme styles can be added with a .light-theme class */
@@ -1497,4 +1497,27 @@ footer {
         gap: var(--spacing-s);
         flex-direction: column;
     }
+}
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;  /* distance from bottom */
+    right: 40px;   /* distance from right */
+    background-color: #25d366;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e;
 }
