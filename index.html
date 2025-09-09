@@ -919,22 +919,24 @@
                 <div class="contact-form-container">
                     <form id="contact-form" action="https://formspree.io/f/mzzaornv" method="POST">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" id="subject" placeholder="Company Name" required>
+                            <input type="text" id="subject" name="subject" placeholder="Company Name" required>
                         </div>
                         <div class="form-group">
                             <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
                         </div>
                         <div class="form-group">
-                            <textarea id="message" placeholder="Please type your query" required></textarea>
+                            <textarea id="message" name="message" placeholder="Please type your query" required></textarea>
                         </div>
+                        <input type="hidden" name="_captcha" value="false">
                         <button type="submit" class="btn primary-btn">Contact me with a Quote</button>
                     </form>
+
                 </div>
             </div>
         </div>
