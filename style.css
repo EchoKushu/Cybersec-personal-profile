@@ -17,6 +17,7 @@
     --success-color: #00ff66; /* Same as accent-color-2 */
     --warning-color: #f0e100; /* Bright yellow */
     --error-color: #ff0055; /* Bright red */
+    --nav-height: 80px;
 
     /* Typography */
     --font-family: 'Poppins', sans-serif;
@@ -229,6 +230,11 @@ nav {
     color: var(--accent-color);
     font-weight: 800;
 }
+.logo-img {
+    height: clamp(28px, 4vw, 48px);
+    width: auto;
+}
+
 
 .nav-links {
     display: flex;
@@ -1520,4 +1526,17 @@ footer {
 .whatsapp-float:hover {
     transform: scale(1.1);
     background-color: #128c7e;
+}
+
+
+header {
+    height: var(--nav-height);
+}
+
+main {
+    padding-top: var(--nav-height);
+}
+
+section {
+    scroll-margin-top: var(--nav-height);
 }
