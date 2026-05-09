@@ -195,6 +195,40 @@ button, .btn {
     box-shadow: 0 0 20px rgba(0, 238, 255, 0.5);
 }
 
+/* Prominent payment / booking button used in Services */
+.pay-btn {
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+    color: var(--primary-dark);
+    padding: 0.9rem 1.6rem;
+    font-weight: 700;
+    border-radius: 999px;
+    box-shadow: 0 6px 20px rgba(0,238,255,0.14), 0 0 30px rgba(0,238,255,0.06);
+    border: 2px solid rgba(255,255,255,0.06);
+}
+
+.pay-btn:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 8px 30px rgba(0,238,255,0.22), 0 0 40px rgba(0,238,255,0.12);
+}
+
+.service-cta {
+    margin-top: 12px;
+}
+
+.placeholder-section {
+    padding: 60px 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(255,255,255,0.01) 100%);
+}
+
+.placeholder-section h2 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+}
+
+.placeholder-section p {
+    color: var(--text-secondary);
+}
+
 /* ====================
    Header & Navigation
    ==================== */
@@ -258,6 +292,63 @@ nav {
     width: 0;
     background-color: var(--accent-color);
     transition: var(--transition);
+}
+
+/* Navbar CTA (Buy Now) */
+.nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.buy-now {
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-hover));
+    color: var(--primary-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 6px 18px rgba(0,238,255,0.12);
+}
+
+.buy-dropdown {
+    position: relative;
+}
+
+.drop-toggle {
+    background: transparent;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem;
+}
+
+.drop-menu {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: var(--tertiary-dark);
+    border-radius: 8px;
+    padding: 8px 0;
+    min-width: 140px;
+    box-shadow: var(--box-shadow);
+    display: none;
+    z-index: 1200;
+}
+
+.drop-menu li a {
+    display: block;
+    padding: 8px 12px;
+    color: var(--text-secondary);
+}
+
+.drop-menu li a:hover {
+    background: rgba(0,238,255,0.04);
+    color: var(--accent-color);
+}
+
+.buy-dropdown.open .drop-menu {
+    display: block;
 }
 
 .nav-links li a:hover {

@@ -161,3 +161,25 @@ if (binaryElement) {
     // Start typing effect when page loads
     setTimeout(typeWriter, 1000);
 }
+
+// Buy Now dropdown toggle (navbar)
+document.addEventListener('DOMContentLoaded', () => {
+    const buyDropdown = document.querySelector('.buy-dropdown');
+    const dropToggle = document.querySelector('.buy-dropdown .drop-toggle');
+
+    if (!buyDropdown || !dropToggle) return;
+
+    dropToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = buyDropdown.classList.toggle('open');
+        dropToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!buyDropdown.contains(e.target)) {
+            buyDropdown.classList.remove('open');
+            dropToggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+});
