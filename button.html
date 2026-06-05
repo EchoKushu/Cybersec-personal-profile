@@ -1,0 +1,86 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>ACCESS TERMINAL</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: black;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, sans-serif;
+    }
+
+    /* glowing background grid */
+    body::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(0,255,180,0.08), transparent 60%),
+                    linear-gradient(rgba(0,255,180,0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(0,255,180,0.05) 1px, transparent 1px);
+        background-size: cover, 40px 40px, 40px 40px;
+        pointer-events: none;
+    }
+
+    #btn {
+        position: absolute;
+        padding: 22px 60px;
+        font-size: 18px;
+        color: #00ffd5;
+        background: transparent;
+        border: 2px solid #00ffd5;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        cursor: pointer;
+        box-shadow: 0 0 15px #00ffd5, 0 0 40px #00ffd5;
+        transition: 0.2s ease;
+    }
+
+    #btn:hover {
+        box-shadow: 0 0 25px #00ffd5, 0 0 80px #00ffd5;
+    }
+</style>
+</head>
+
+<body>
+
+<button id="btn">ENTER KUSHU</button>
+
+<script>
+let btn = document.getElementById("btn");
+let escapes = 0;
+
+function moveButton() {
+    const x = Math.random() * (window.innerWidth - 200);
+    const y = Math.random() * (window.innerHeight - 80);
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+}
+
+btn.addEventListener("mouseenter", () => {
+    if (escapes < 2) {
+        moveButton();
+        escapes++;
+    }
+});
+
+btn.addEventListener("click", () => {
+    if (escapes >= 2) {
+        window.location.href = "https://echokushu.github.io/card/";
+    } else {
+        moveButton();
+        escapes++;
+    }
+});
+</script>
+
+</body>
+</html>
+```
