@@ -6,7 +6,7 @@ const navLinksItems = document.querySelectorAll('.nav-links li');
 const themeToggle = document.querySelector('.theme-toggle');
 const moonIcon = document.querySelector('.fa-moon');
 const sunIcon = document.querySelector('.fa-sun');
-const contactForm = document.getElementById('contact-form');
+const contactForm = document.getElementById('enquiry-form');
 
 // Header scroll effect
 window.addEventListener('scroll', () => {
@@ -17,23 +17,29 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Mobile Navigation
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('nav-active');
-    hamburger.classList.toggle('active');
-    document.body.classList.toggle('no-scroll'); // Prevent body scrolling when menu is open
+// Keep the mobile menu state, keyboard access and scrolling in sync.
+const mobileNavigation = window.matchMedia('(max-width: 992px)');
+function setNavigation(open) {
+    navLinks.classList.toggle('nav-active', open);
+    hamburger.classList.toggle('active', open);
+    hamburger.setAttribute('aria-expanded', String(open));
+    hamburger.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    document.body.classList.toggle('no-scroll', open && mobileNavigation.matches);
+    navLinks.inert = mobileNavigation.matches && !open;
+}
+hamburger.addEventListener('click', () => setNavigation(!navLinks.classList.contains('nav-active')));
+navLinksItems.forEach(item => item.addEventListener('click', () => setNavigation(false)));
+mobileNavigation.addEventListener('change', () => setNavigation(false));
+document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navLinks.classList.contains('nav-active')) {
+        setNavigation(false);
+        hamburger.focus();
+    }
 });
-
-// Close mobile menu when clicking on a link
-navLinksItems.forEach(item => {
-    item.addEventListener('click', () => {
-        if (navLinks.classList.contains('nav-active')) {
-            navLinks.classList.remove('nav-active');
-            hamburger.classList.remove('active');
-            document.body.classList.remove('no-scroll');
-        }
-    });
+document.addEventListener('click', event => {
+    if (!navLinks.contains(event.target) && !hamburger.contains(event.target)) setNavigation(false);
 });
+setNavigation(false);
 
 // Theme toggle functionality
 themeToggle.addEventListener('click', () => {
@@ -83,45 +89,33 @@ document.addEventListener('DOMContentLoaded', () => {
     animateElements();
 });
 
-// Handle contact form submission
+// Send the enquiry without discarding entered details on a connection error.
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value;
-
-        // Simple form validation
-        if (!name || !email || !subject || !message) {
-            alert('Please fill out all fields');
-            return;
+    contactForm.addEventListener('submit', async event => {
+        event.preventDefault();
+        if (!contactForm.reportValidity()) return;
+        const button = contactForm.querySelector('button[type="submit"]');
+        const status = document.getElementById('enquiry-status');
+        button.disabled = true;
+        button.textContent = 'Sending…';
+        status.textContent = 'Sending your enquiry…';
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 20000);
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST', body: new FormData(contactForm),
+                headers: { Accept: 'application/json' }, signal: controller.signal
+            });
+            if (!response.ok) throw new Error('Submission failed');
+            status.textContent = 'Your enquiry has been sent. Thank you — we’ll reply using the contact details you provided.';
+            contactForm.reset();
+        } catch (error) {
+            status.textContent = 'We couldn’t confirm delivery. Your details are still here. Try again, or email info@echokushu.com. If you already received a confirmation email, there is no need to resend.';
+        } finally {
+            clearTimeout(timeout);
+            button.disabled = false;
+            button.textContent = 'Send enquiry';
         }
-
-        // Here you would normally send the form data to a server
-        // For this demo, we'll just show a success message
-
-        const formData = {
-            name,
-            email,
-            subject,
-            message
-        };
-
-        console.log('Form submitted:', formData);
-
-        // Show success message
-        const successMessage = document.createElement('div');
-        successMessage.className = 'success-message';
-        successMessage.innerHTML = `
-            <i class="fas fa-check-circle"></i>
-            <p>Thank you for your message, ${name}! I'll get back to you soon.</p>
-        `;
-
-        // Replace form with success message
-        contactForm.innerHTML = '';
-        contactForm.appendChild(successMessage);
     });
 }
 
@@ -173,6 +167,14 @@ document.addEventListener('DOMContentLoaded', () => {
         e.stopPropagation();
         const isOpen = buyDropdown.classList.toggle('open');
         dropToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && buyDropdown.classList.contains('open')) {
+            buyDropdown.classList.remove('open');
+            dropToggle.setAttribute('aria-expanded', 'false');
+            dropToggle.focus();
+        }
     });
 
     // Close dropdown when clicking outside

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Customer Agreement | ECHO KUSHU LTD</title>
+<link rel="stylesheet" href="agreement.css">
+<script src="agreement.js" defer></script>
+</head>
+<body>
+<main>
+<header><img src="../assets/logo123.png" alt="Echo Kushu" width="56" height="56"><p>ECHO KUSHU LTD</p></header>
+<h1>Website Service &amp; Customer Agreement</h1>
+<p>Please read the agreement before completing your signature details below.</p>
+<div class="document-actions"><a href="agreement.pdf" target="_blank" rel="noopener">Open agreement PDF</a><a href="agreement.pdf" download="ECHO_KUSHU_LTD_Website_Service_Customer_Agreement_FINAL.pdf">Download agreement</a></div>
+<object class="agreement-document" data="agreement.pdf" type="application/pdf" aria-label="Website Service and Customer Agreement, seven-page PDF"><p>Your browser cannot display this PDF. <a href="agreement.pdf">Open the agreement</a> to read it before signing.</p></object>
+<section aria-labelledby="signature-title">
+<h2 id="signature-title">Customer signature</h2>
+<p>Enter your full name as your typed signature, along with your phone number and address.</p>
+<form id="signature-form">
+<label for="full-name">Full name / typed signature</label>
+<input id="full-name" name="full_name" autocomplete="name" maxlength="150" required>
+<label for="phone">Phone number</label>
+<input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="40" required>
+<label for="address">Full address, including postcode</label>
+<textarea id="address" name="address" autocomplete="street-address" rows="4" maxlength="1000" required></textarea>
+<label class="consent" for="consent"><input id="consent" name="consent" type="checkbox" required><span>I have read and agree to the Website Service &amp; Customer Agreement above, and intend my typed full name to be my signature.</span></label>
+<p class="note">Your details stay in this browser page. Saving creates a signature record on your device; it does not send your details to ECHO KUSHU LTD. Keep it with the downloaded agreement and send both through your agreed contact method.</p>
+<button type="submit">Save signature record</button>
+<noscript><p>Enable JavaScript to save a signature record, or download the agreement and complete it separately.</p></noscript>
+</form>
+<p id="status" role="status" aria-live="polite"></p>
+<article id="signature-record" hidden aria-labelledby="record-title">
+<h2 id="record-title">Customer signature record</h2>
+<p>Agreement: ECHO KUSHU LTD — Website Service &amp; Customer Agreement</p>
+<p>Document: ECHO_KUSHU_LTD_Website_Service_Customer_Agreement_FINAL.pdf (7 pages)</p>
+<dl><dt>Full name / typed signature</dt><dd id="record-name"></dd><dt>Phone number</dt><dd id="record-phone"></dd><dt>Address</dt><dd id="record-address"></dd><dt>Date and time recorded</dt><dd id="record-date"></dd></dl>
+<p>I have read and agree to the agreement identified above and intend my typed full name to be my signature.</p>
+<p>This record was created on the customer’s device. It is not a receipt of submission or a countersignature by ECHO KUSHU LTD. Retain it with the original agreement.</p>
+<button id="print-record" type="button">Print / save record as PDF</button>
+</article>
+</section>
+</main>
+</body>
+</html>

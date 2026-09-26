@@ -1,0 +1,16 @@
+
+.website-comparison { margin: 3rem 0; padding: 2rem 0; color: var(--text-primary, #eef5f3); border-top: 1px solid var(--border-color, #284347); }
+.website-comparison h2 { font-size: clamp(1.5rem, 4vw, 2rem); line-height: 1.25; margin: 0 0 1rem; }
+.website-comparison > p { max-width: 950px; color: var(--text-secondary, #b9cfce); font-size: .95rem; }
+.comparison-scroll { max-width: 100%; overflow-x: auto; margin: 1.5rem 0; border: 1px solid var(--border-color, #284347); border-radius: 8px; }
+.comparison-scroll:focus-visible { outline: 2px solid var(--accent-color, #74e5d3); outline-offset: 3px; }
+.website-comparison table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: .85rem; line-height: 1.6; }
+.website-comparison caption { text-align: left; padding: 1rem; font-weight: 600; }
+.website-comparison th, .website-comparison td { text-align: left; vertical-align: top; padding: 1rem; border-top: 1px solid var(--border-color, #284347); }
+.website-comparison thead { background: var(--tertiary-dark, #10272c); color: var(--accent-color, #74e5d3); }
+.website-comparison tbody th { width: 21%; }
+.website-comparison td { width: 26.33%; }
+.website-comparison small { font-weight: normal; }
+.website-comparison a { color: var(--accent-color, #74e5d3); text-decoration: underline; }
+.website-comparison .comparison-sources { margin-top: 1rem; font-size: .78rem; }
+@media print { .website-comparison { break-before: page; color: #10272c; } .website-comparison > p, .website-comparison thead, .website-comparison a { color: #10272c; } .comparison-scroll { overflow: visible; } .website-comparison table { min-width: 0; font-size: 8pt; } .website-comparison th, .website-comparison td { padding: 7px; } .website-comparison tr { break-inside: avoid; } }

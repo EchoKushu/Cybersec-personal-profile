@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="comparison.css">
 </head>
 <body>
     <!-- Header Navigation -->
@@ -18,12 +19,12 @@
                          <img src="assets/logo123.png" alt="Echo Kushu logo" class="logo-img">
                     </a>
                 </div>
-                <ul class="nav-links">
+                <ul class="nav-links" id="primary-navigation">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Services</a></li>
-                    <!--<li><a href="#projects">Projects</a></li>-->
-                    <li><a href="#experience">Product</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Process</a></li>
                     <!--<li><a href="#education">Education</a></li>-->
                     <li><a href="#certifications">Certifications</a></li>
                     <!--<li><a href="#article">Article</a></li>-->
@@ -31,20 +32,20 @@
                 </ul>
                 <!-- Navbar call-to-action: Buy Now with quick links -->
                 <div class="nav-cta">
-                    <a href="https://pay.gocardless.com/BRT01KR6RFK892WHJN29A10XEQRVK" target="_blank" rel="noopener noreferrer" class="btn buy-now">BUY NOW</a>
+                    <a href="https://pay.gocardless.com/BRT01KR6RFK892WHJN29A10XEQRVK" target="_blank" rel="noopener noreferrer" class="btn buy-now">PAY ONLINE</a>
                     <div class="buy-dropdown">
-                        <button class="drop-toggle" aria-expanded="false">▼</button>
-                        <ul class="drop-menu">
+                        <button class="drop-toggle" type="button" aria-label="Show purchase options" aria-controls="purchase-options" aria-expanded="false">▼</button>
+                        <ul class="drop-menu" id="purchase-options">
                             <li><a href="https://pay.gocardless.com/BRT01KR6RFK892WHJN29A10XEQRVK" target="_blank" rel="noopener noreferrer">Website</a></li>
                             <li><a href="https://pay.gocardless.com/BRT01KR6T37MCMX27S9R5MXK8QMAD" target="_blank" rel="noopener noreferrer">Security</a></li>
                         </ul>
                     </div>
                 </div>
-                <div class="hamburger">
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                </div>
+                <button class="hamburger" type="button" aria-label="Open navigation" aria-controls="primary-navigation" aria-expanded="false">
+                    <span class="line" aria-hidden="true"></span>
+                    <span class="line" aria-hidden="true"></span>
+                    <span class="line" aria-hidden="true"></span>
+                </button>
             </nav>
         </div>
     </header>
@@ -100,11 +101,11 @@
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>info@echokushu.com</span>
+                        <a href="mailto:info@echokushu.com">info@echokushu.com</a>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>+447442972166</span>
+                        <a href="tel:+447873969610">+44 7873 969610</a>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -212,176 +213,147 @@
         </div>
     </section>
 
-    <!-- Projects Section --
-    <section id="projects" class="projects">
+    <!-- Projects Section -->
+    <section id="projects" class="projects" aria-labelledby="projects-title">
         <div class="container">
             <div class="section-header">
-                <h2>Projects and Companies</h2>
+                <h2 id="projects-title">Websites &amp; Applications</h2>
                 <div class="underline"></div>
+                <p class="projects-intro">A selection of business websites and practical applications. Explore each project for a closer look.</p>
+                <p class="project-shortcuts"><a href="#website-comparison">Compare options and costs ↓</a> · <a href="#contact">Request a quote</a></p>
             </div>
-            <div class="projects-grid">
-                <!-- Project 1 --
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Company Pentest</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/ShadowHash-All-in-One-Crypto-Solution" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/ShadowHash-All-in-One-Crypto-Solution" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
+            <div class="projects-grid showcase-grid">
+                <article class="project-card showcase-card">
+                    <a class="project-preview" href="assets/projects/daspottt.com.jpg" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot of Da Spottt"><img src="assets/projects/daspottt.com.jpg" alt="Homepage screenshot of Da Spottt" width="1440" height="1000" loading="lazy"></a>
                     <div class="project-body">
-                        <p class="project-description">This project is currently being compleated.</p>
-                        <div class="project-tech">
-                            <span>Java</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JavaScript</span>
-                        </div>
+                        <p class="project-category">Restaurant website</p>
+                        <h3>Da Spottt</h3>
+                        <p class="project-domain">daspottt.com</p>
+                        <p class="project-description">A vibrant online home for a Caribbean restaurant in Reading, bringing its food, story and atmosphere together.</p>
+                        <details class="project-presentation">
+                            <summary>Mini presentation</summary>
+                            <div class="presentation-panel"><span class="presentation-step">01 / OVERVIEW</span><h4>A taste of the Caribbean</h4><p>Large food photography introduces the restaurant, followed by menu selections, prices and the story behind the business.</p></div>
+                            <div class="presentation-panel"><span class="presentation-step">02 / EXPERIENCE</span><h4>From browsing to booking</h4><p>Menu navigation, location details and a table reservation form give visitors a clear route to planning their visit.</p></div>
+                        </details>
+                        <a class="project-visit" href="daspottt-presentation.html" style="margin-bottom: 1rem;">View feature presentation <span aria-hidden="true">→</span></a>
+                        <a class="project-visit" href="https://daspottt.com/" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span><span class="project-sr-only"> — Da Spottt (opens in a new tab)</span></a>
                     </div>
-                </div>
-
-                <!-- Project 2 --
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>SecureKeyGen</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/SecureKeyGenerator" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/SecureKeyGenerator" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
+                </article>
+                <article class="project-card showcase-card">
+                    <a class="project-preview" href="assets/projects/riinathepsychic.com.jpg" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot of Riina the Psychic"><img src="assets/projects/riinathepsychic.com.jpg" alt="Homepage screenshot of Riina the Psychic" width="1440" height="1000" loading="lazy"></a>
                     <div class="project-body">
-                        <p class="project-description">Robust cryptographic key generator built in Java, utilizing PBKDF2, XOR operations, and multi-layered encryption (AES, 3DES, Blowfish) to generate secure, unpredictable keys for encryption.</p>
-                        <div class="project-tech">
-                            <span>Java</span>
-                            <span>Cryptography</span>
-                            <span>Security</span>
-                        </div>
+                        <p class="project-category">Personal brand website</p>
+                        <h3>Riina the Psychic</h3>
+                        <p class="project-domain">riinathepsychic.com</p>
+                        <p class="project-description">A personal website for Riina Kushu, presenting intuitive readings and a clear path to booking.</p>
+                        <details class="project-presentation">
+                            <summary>Mini presentation</summary>
+                            <div class="presentation-panel"><span class="presentation-step">01 / OVERVIEW</span><h4>A personal introduction</h4><p>An editorial layout introduces Riina, her background and four reading types: tarot, astrology, palmistry and BaZi.</p></div>
+                            <div class="presentation-panel"><span class="presentation-step">02 / EXPERIENCE</span><h4>Explore and book</h4><p>Service descriptions, pricing, English and Japanese language options, and booking links help visitors find their next step.</p></div>
+                        </details>
+                        <a class="project-visit" href="riina-presentation.html" style="margin-bottom: 1rem;">View feature presentation <span aria-hidden="true">→</span></a>
+                        <a class="project-visit" href="https://riinathepsychic.com/" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span><span class="project-sr-only"> — Riina the Psychic (opens in a new tab)</span></a>
                     </div>
-                </div>
-
-                <!-- Project 3 --
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>PixelPhantomX</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/PixelPhantomX" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/PixelPhantomX" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
+                </article>
+                <article class="project-card showcase-card">
+                    <a class="project-preview" href="assets/projects/thaimassageinhove.com.png" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot of Thai Massage in Hove"><img src="assets/projects/thaimassageinhove.com.png" alt="Thai Massage in Hove homepage, rendered from the supplied website archive" width="1440" height="1000" loading="lazy"></a>
                     <div class="project-body">
-                        <p class="project-description">Adversarial image obfuscation tool that generates ghost images using noise injection, edge distortion, metadata poisoning, and watermarking to prevent unauthorized use in AI training.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Computer Vision</span>
-                            <span>AI Security</span>
-                        </div>
+                        <p class="project-category">Wellness website</p>
+                        <h3>Thai Massage in Hove</h3>
+                        <p class="project-domain">thaimassageinhove.com</p>
+                        <p class="project-description">A welcoming wellness website for Thai Massage in Hove, bringing treatments, pricing and appointment enquiries together.</p>
+                        <details class="project-presentation">
+                            <summary>Mini presentation</summary>
+                            <div class="presentation-panel"><span class="presentation-step">01 / OVERVIEW</span><h4>A calming first impression</h4><p>Forest green and warm gold colours, spa photography and a therapist introduction create a welcoming setting for exploring traditional Thai massage and other treatments.</p></div>
+                            <div class="presentation-panel"><span class="presentation-step">02 / EXPERIENCE</span><h4>Explore treatments and get in touch</h4><p>Dedicated services, pricing, gift voucher and contact pages help visitors plan their visit, with prominent phone and WhatsApp links for enquiries. Screenshot captured from the supplied website archive.</p></div>
+                        </details>
+                        <a class="project-visit" href="hove-thai-presentation.html" style="margin-bottom: 1rem;">View feature presentation <span aria-hidden="true">→</span></a>
                     </div>
-                </div>
-
-                <!-- Project 4 --
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>SteganoX</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/SteganoX-Hidden-Messages-in-Images" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/SteganoX-Hidden-Messages-in-Images" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
+                </article>
+                <article class="project-card showcase-card">
+                    <a class="project-preview" href="assets/projects/kushuthaimassage.com.jpg" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot of Kushu Thai Massage"><img src="assets/projects/kushuthaimassage.com.jpg" alt="Homepage screenshot of Kushu Thai Massage" width="1440" height="1000" loading="lazy"></a>
                     <div class="project-body">
-                        <p class="project-description">A steganography tool enabling users to hide and extract secret messages from images, featuring command-line interface, interactive mode, and lightweight encoding/decoding. Available on PyPI.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Steganography</span>
-                            <span>PyPI</span>
-                        </div>
+                        <p class="project-category">Massage &amp; spa website</p>
+                        <h3>Kushu Thai Massage</h3>
+                        <p class="project-domain">kushuthaimassage.com</p>
+                        <p class="project-description">A calm, welcoming website for EchoKushu Thai Massage &amp; Spa in Kemptown, Brighton.</p>
+                        <details class="project-presentation">
+                            <summary>Mini presentation</summary>
+                            <div class="presentation-panel"><span class="presentation-step">01 / OVERVIEW</span><h4>A welcoming first impression</h4><p>Soft colours, studio imagery and treatment information introduce the massage studio and its approach.</p></div>
+                            <div class="presentation-panel"><span class="presentation-step">02 / EXPERIENCE</span><h4>Explore, find, enquire</h4><p>Visitors can explore treatments, find the Brighton studio and follow booking or WhatsApp contact links.</p></div>
+                        </details>
+                        <a class="project-visit" href="kushu-thai-presentation.html" style="margin-bottom: 1rem;">View feature presentation <span aria-hidden="true">→</span></a>
+                        <a class="project-visit" href="https://kushuthaimassage.com/" target="_blank" rel="noopener noreferrer">Visit website <span aria-hidden="true">↗</span><span class="project-sr-only"> — Kushu Thai Massage (opens in a new tab)</span></a>
                     </div>
-                </div>
-
-                <!-- Project 5 --
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>ShadowShell</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/ShadowShell-Stealthy-and-Powerful-Backdoor" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/ShadowShell-Stealthy-and-Powerful-Backdoor" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
+                </article>
+                <article class="project-card showcase-card">
+                    <a class="project-preview" href="assets/projects/kushuthaimassage.co.uk.jpg" target="_blank" rel="noopener noreferrer" aria-label="View full screenshot of Kushu Booking System"><img src="assets/projects/kushuthaimassage.co.uk.jpg" alt="Homepage screenshot of Kushu Booking System" width="1440" height="1000" loading="lazy"></a>
                     <div class="project-body">
-                        <p class="project-description">Python-based reverse shell for ethical hacking and penetration testing, offering persistence, keylogging, screenshot capture, file transfer, and stealth remote control over compromised systems.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Steganography</span>
-                            <span>PyPI</span>
-                        </div>
+                        <p class="project-category">Appointment management</p>
+                        <h3>Kushu Booking System</h3>
+                        <p class="project-domain">kushuthaimassage.co.uk</p>
+                        <p class="project-description">A clinic management application combining appointment calendars, staff availability, weekly rotas and payment-status tracking.</p>
+                        <details class="project-presentation">
+                            <summary>Mini presentation</summary>
+                            <div class="presentation-panel"><span class="presentation-step">01 / OVERVIEW</span><h4>Appointments at a glance</h4><p>Month, week and day calendar views sit alongside weekly therapist statistics. Appointment forms capture customer details, timing, staff assignment, location and payment status.</p></div>
+                            <div class="presentation-panel"><span class="presentation-step">02 / EXPERIENCE</span><h4>Clinic organisation</h4><p>Monthly staff availability and a weekly rota support shift planning, with coverage and staffing-gap sections. Payment details and staff logs have separate password gates.</p></div>
+                        </details>
+                        <a class="project-visit" href="kushu-booking-presentation.html" style="margin-bottom: 1rem;">View feature presentation <span aria-hidden="true">→</span></a>
+                        <a class="project-visit" href="https://kushuthaimassage.co.uk/" target="_blank" rel="noopener noreferrer">Visit booking system <span aria-hidden="true">↗</span><span class="project-sr-only"> — Kushu Booking System (opens in a new tab)</span></a>
                     </div>
-                </div>
-
-                <!-- Project 6 --
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>AWS-ScriptEngine</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/AWS-ScriptEngine-Engineered-Scripts-for-AWS-Operations" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/AWS-ScriptEngine-Engineered-Scripts-for-AWS-Operations" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">A collection of Bash and PowerShell scripts for automating AWS tasks, including CLI setup, S3, EC2, and DynamoDB management, streamlining cloud operations for Linux and Windows users.</p>
-                        <div class="project-tech">
-                            <span>PowerShell</span>
-                            <span>Bash</span>
-                            <span>AWS</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7 --
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>AWSxTerra</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/AWSxTerra-AWS-EC2-Deployment-Scripts-via-Terraform" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/AWSxTerra-AWS-EC2-Deployment-Scripts-via-Terraform" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Terraform scripts for deploying Amazon Linux 2023 and Windows Server 2019 instances on AWS, ensuring Free Tier eligibility with automated security groups, key pairs, storage setup, and web server configurations.</p>
-                        <div class="project-tech">
-                            <span>Terraform</span>
-                            <span>HCL</span>
-                            <span>PowerShell</span>
-                            <span>Bash</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 8 --
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Port Scanner</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/Basic-Port-Scanner" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://github.com/EchoKushu/Cybersec-personal-profile/Basic-Port-Scanner" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-                        </div>
-                    </div>
-                    <div class="project-body">
-                        <p class="project-description">Python-based port scanner that detects open ports on single or multiple IPs, supports custom port ranges, uses socket timeouts for efficiency, and provides color-coded output.</p>
-                        <div class="project-tech">
-                            <span>Python</span>
-                            <span>Network Security</span>
-                            <span>Socket Programming</span>
-                        </div>
-                    </div>
-                </div> 
+                </article>
             </div>
+
+<section class="website-comparison" id="website-comparison" aria-labelledby="comparison-title">
+    <h2 id="comparison-title">Ways to build your website</h2>
+    <p>A quick comparison of a bespoke build, a designer, a website builder and hosting. The right choice depends on the features you need and how much you want to manage yourself.</p>
+
+    <h3>Estimated yearly competitor costs</h3>
+    <p class="comparison-note">Budget examples for one website, reviewed 26 September 2026. Figures are before any applicable VAT, domain renewals, email, transaction fees and optional support. Builder prices assume annual billing and you doing the design work yourself; these are estimates, not checkout quotes.</p>
+    <div class="comparison-scroll" role="region" aria-label="Estimated annual website costs; scroll horizontally on small screens" tabindex="0">
+        <table>
+            <caption>First-year and ongoing costs at the same assumed rates</caption>
+            <thead><tr><th scope="col">Example</th><th scope="col">First year</th><th scope="col">Following years</th><th scope="col">Calculation &amp; scope</th></tr></thead>
+            <tbody>
+                <tr><th scope="row">Wix Light</th><td><strong>Approx. £108</strong></td><td>Approx. £108/year</td><td>£9 × 12. Basic website; not the booking-plan comparison.</td></tr>
+                <tr><th scope="row">Wix Core / Business</th><td><strong>Approx. £192–£300</strong></td><td>Approx. £192–£300/year</td><td>£16–£25 × 12. Website and scheduling options; check staff limits and required features.</td></tr>
+                <tr><th scope="row">Squarespace Basic / Core</th><td><strong>Approx. £144–£204</strong></td><td>Approx. £144–£204/year</td><td>£12–£17 × 12. Website subscription only; Acuity Scheduling costs extra.</td></tr>
+                <tr><th scope="row">Squarespace Core + Acuity Standard</th><td><strong>Approx. £447</strong></td><td>Approx. £447/year</td><td>£204 website + $324/year scheduling ≈ £243, using an illustrative $1 = £0.75 budgeting rate. Up to 6 calendars; currency conversion and card fees vary.</td></tr>
+                <tr><th scope="row">Krystal hosting only</th><td><strong>Approx. £84–£228</strong></td><td>Approx. £84–£228/year</td><td>Published £7–£19 monthly rates × 12; annual-payment discounts may reduce this. Hosting only, without a website build or booking application.</td></tr>
+                <tr><th scope="row">Freelance designer + website plan</th><td><strong>Illustrative £944–£3,204</strong></td><td>£144–£204/year for the example plan, plus quoted support</td><td>£800–£3,000 one-off simple website build + £144–£204 platform budget. The build fee is not annual; a bespoke booking system needs a separate quote.</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="comparison-note">These examples are not equivalent packages. Clinic rotas, payment records and custom administration may require additional software or development. Following-year estimates assume unchanged prices, not guaranteed renewal rates. Promotional discounts are excluded; verify local pricing and tax at checkout. The USD conversion above is a budgeting assumption, not a live exchange-rate quote.</p>
+
+    <div class="comparison-scroll" role="region" aria-label="Website options comparison; scroll horizontally on small screens" tabindex="0">
+        <table>
+            <caption>Compare the service, booking options and ongoing costs</caption>
+            <thead><tr><th scope="col">Option</th><th scope="col">What you get</th><th scope="col">Bookings &amp; custom features</th><th scope="col">Costs to allow for</th></tr></thead>
+            <tbody>
+                <tr><th scope="row">Bespoke development<br><small>Like these portfolio projects</small></th><td>Design and development around an agreed brief.</td><td>Specific workflows can be built to scope, such as the featured clinic rota and staff availability screens.</td><td>Project quote, hosting, domain and agreed maintenance. Extra features priced to scope.</td></tr>
+                <tr><th scope="row">Another designer or agency</th><td>A managed design service; may use custom code, WordPress or a builder.</td><td>Depends on the platform and what is included in the quote.</td><td>Design fee plus any platform, hosting, plugin and support charges. Compare the same scope.</td></tr>
+                <tr><th scope="row">Wix</th><td>A website builder with hosting included; build it yourself or hire help.</td><td>Wix Bookings supports service scheduling; check the plan and whether it fits your workflow.</td><td>Selected plan, domain renewal and any optional apps or services. Confirm the checkout price.</td></tr>
+                <tr><th scope="row">Squarespace</th><td>A website platform with plan-based features; build it yourself or hire help.</td><td>Acuity Scheduling is a separate subscription. Check its suitability for your booking needs.</td><td>Website subscription, domain and any separate scheduling, email or other services.</td></tr>
+                <tr><th scope="row">Hosting only<br><small>For example, a web-hosting plan</small></th><td>Infrastructure to run a website. A completed design is a separate requirement; some providers also sell builders.</td><td>Booking software must be installed, built or connected separately.</td><td>Hosting renewal, domain, development and any software or maintenance fees.</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p class="comparison-note">For a simple brochure site, a builder may be sufficient. For a clinic workflow, compare staff availability, shift planning and reporting as well as appointment booking. A designer can use any of these approaches; hosting and design are different services.</p>
+    <p class="comparison-sources">Provider details checked September 2026. Compare renewal prices, VAT, billing periods and add-ons before choosing.
+        Sources: <a href="https://www.wix.com/plans" target="_blank" rel="noopener noreferrer">Wix plans</a> ·
+        <a href="https://support.squarespace.com/hc/en-us/articles/206536797-Choosing-the-right-Squarespace-plan" target="_blank" rel="noopener noreferrer">Squarespace plans</a> ·
+        <a href="https://www.hostinger.com/in/tutorials/website-builder-vs-web-hosting/" target="_blank" rel="noopener noreferrer">Hosting and builders explained</a>.
+    </p>
+</section>
         </div>
-    </section> 
+    </section>
 
-    !-- Experience Section -->
+    <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
             <div class="section-header">
-                <h2>Method</h2>
+                <h2>How we work</h2>
                 <div class="underline"></div>
             </div>
             <div class="timeline">
@@ -390,7 +362,7 @@
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <div class="timeline-content">
-                        <h3>Pentesting engagment cycle</h3>
+                        <h3>Penetration testing process</h3>
                         <h4>UK-Based Cybersecurity</h4>
                         <span class="timeline-date"> estimated on quote</span>
                         <ul>
@@ -409,9 +381,10 @@
                     <div class="timeline-content">
                         <h3>Website Design & Application Development</h3>
                         <h4>Freelance & Contract Projects</h4>
-                        <span class="timeline-date">1 – 2 Months Approximatly</span>
+                        <span class="timeline-date">Approximately 1–2 months</span>
                         <div class="service-cta">
-                            <a href="https://pay.gocardless.com/BRT01KR6RFK892WHJN29A10XEQRVK" target="_blank" rel="noopener noreferrer" class="btn pay-btn">BUY NOW</a>
+                            <p class="enquiry-help">Already agreed your project? Continue to GoCardless to arrange payment.</p>
+                            <a href="https://pay.gocardless.com/BRT01KR6RFK892WHJN29A10XEQRVK" target="_blank" rel="noopener noreferrer" class="btn pay-btn">Pay for website service</a>
                         </div>
                         <ul>
                             <li>Designed responsive websites using HTML5, CSS3, and JavaScript frameworks</li>
@@ -430,7 +403,8 @@
         </div>
     </section>
 
-    <!-- Education Section --
+    <!--
+     Education Section --
     <section id="education" class="education">
         <div class="container">
             <div class="section-header">
@@ -460,7 +434,7 @@
                         <p>Percentage: 89.8%</p>
                     </div>
                 </div>
-                <!--<div class="timeline-item">
+                <div class="timeline-item">
                     <div class="timeline-icon">
                         <i class="fas fa-school"></i>
                     </div>
@@ -470,10 +444,12 @@
                         <span class="timeline-date">2020</span>
                         <p>Percentage: 94.8%</p>
                     </div>
-                </div>-->
+                </div>
             </div>
         </div>
     </section>
+
+    -->
 
     <!-- Certifications Section -->
     <section id="certifications" class="certifications">
@@ -645,7 +621,7 @@
 
                 <div class="certification-card">
                     <div class="certification-logo">
-                        <i class="fas fa-government"></i>
+                        <i class="fas fa-landmark"></i>
                     </div>
                     <div class="certification-content">
                         <h3>HM Government G-Cloud</h3>
@@ -666,14 +642,15 @@
         </div>
     </section>
 
-    <!-- Achievements Section --
+    <!--
+     Achievements Section --
     <section id="achievements" class="achievements">
         <div class="container">
             <div class="section-header">
                 <h2>Achievements</h2>
                 <div class="underline"></div>
             </div>
-            <!--<div class="achievements-list">
+            <div class="achievements-list">
                 <div class="achievement-item">
                     <div class="achievement-icon">
                         <i class="fas fa-book"></i>
@@ -719,11 +696,11 @@
                         <p>Ranked in the Global Top 2% on TryHackMe, showcasing expertise in cybersecurity, ethical hacking, and VAPT through solving advanced, real-world challenges</p>
                     </div>
                 </div>
-            </div>-->
+            </div>
         </div>
     </section>
 
-    <!-- Trainings & Courses Section --
+     Trainings & Courses Section --
     <section id="trainings" class="trainings">
         <div class="container">
             <div class="section-header">
@@ -894,7 +871,9 @@
             </div>
         </div>
     </section>
--->
+
+    -->
+
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
@@ -910,7 +889,7 @@
                         </div>
                         <div class="text">
                             <h3>Email</h3>
-                            <p>info@echokushu.com</p>
+                            <p><a href="mailto:info@echokushu.com">info@echokushu.com</a></p>
                         </div>
                     </div>
                     <div class="contact-info-item">
@@ -919,7 +898,7 @@
                         </div>
                         <div class="text">
                             <h3>Phone</h3>
-                            <p>+447442972166</p>
+                            <p><a href="tel:+447873969610">+44 7873 969610</a></p>
                         </div>
                     </div>
                     <div class="contact-info-item">
@@ -933,36 +912,38 @@
                     </div>
                 </div>
                 <div >
-                    <form  action="https://formspree.io/f/mzzaornv" method="POST">
+                    <form id="enquiry-form" action="https://formspree.io/f/mzzaornv" method="POST">
+                        <p class="enquiry-help">Tell us what you need and how to reach you. Company and phone details are optional.</p>
                         <div class="form-group">
                             <label for="name">Your Name:</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <input type="text" id="name" name="name" placeholder="Your Name" autocomplete="name" required>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Your Email:</label>
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            <input type="email" id="email" name="email" placeholder="Your Email" autocomplete="email" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="subject">Company Name:</label>
-                            <input type="text" id="subject" name="subject" placeholder="Company Name" required>
+                            <label for="subject">Company name (optional):</label>
+                            <input type="text" id="subject" name="subject" placeholder="Company Name" autocomplete="organization">
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">Your Phone Number:</label>
-                            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+                            <label for="phone">Phone number (optional):</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" autocomplete="tel">
                         </div>
 
                         <div class="form-group">
-                            <label for="message">Please type your query:</label>
-                            <textarea id="message" name="message" placeholder="Please type your query" required></textarea>
+                            <label for="message">What would you like help with?</label>
+                            <textarea id="message" name="message" placeholder="For example: a business website, a booking system, or a security assessment." required></textarea>
                         </div>
 
                         <!-- Disable captcha -->
                         <input type="hidden" name="_captcha" value="false">
 
-                        <button type="submit" class="btn primary-btn">Contact me with a Quote</button>
+                        <button type="submit" class="btn primary-btn">Send enquiry</button>
+                        <p id="enquiry-status" role="status" aria-live="polite"></p>
                     </form>
 
                 </div>
@@ -1008,7 +989,7 @@
 
     <script src="script.js"></script>
 <!-- Floating WhatsApp Button -->
-<a href="https://wa.me/66820655860" target="_blank" class="whatsapp-float">
+<a href="https://wa.me/447873969610" target="_blank" rel="noopener noreferrer" aria-label="Contact us on WhatsApp" class="whatsapp-float">
     <i class="fab fa-whatsapp"></i>
 </a>
 </body>

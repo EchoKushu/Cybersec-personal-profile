@@ -1,8 +1,8 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ACCESS TERMINAL</title>
 <style>
     body {
@@ -31,7 +31,8 @@
 
     #btn {
         position: absolute;
-        padding: 22px 60px;
+        padding: 22px clamp(20px, 8vw, 60px);
+        max-width: calc(100vw - 32px);
         font-size: 18px;
         color: #00ffd5;
         background: transparent;
@@ -58,29 +59,27 @@ let btn = document.getElementById("btn");
 let escapes = 0;
 
 function moveButton() {
-    const x = Math.random() * (window.innerWidth - 200);
-    const y = Math.random() * (window.innerHeight - 80);
+    const x = Math.random() * (Math.max(0, window.innerWidth - btn.offsetWidth));
+    const y = Math.random() * (Math.max(0, window.innerHeight - btn.offsetHeight));
     btn.style.left = x + "px";
     btn.style.top = y + "px";
 }
 
 btn.addEventListener("mouseenter", () => {
-    if (escapes < 2) {
+    if (escapes < 2 && window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
         moveButton();
         escapes++;
     }
 });
 
 btn.addEventListener("click", () => {
-    if (escapes >= 2) {
-        window.location.href = "https://echokushu.github.io/card/";
-    } else {
-        moveButton();
-        escapes++;
-    }
+    window.location.href = "https://echokushu.github.io/card/";
+});
+window.addEventListener('resize', () => {
+    btn.style.left = '';
+    btn.style.top = '';
 });
 </script>
 
 </body>
 </html>
-```
