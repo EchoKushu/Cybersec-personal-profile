@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Echo Kushu™ | Enquiries &amp; Partnerships</title>
+  <meta name="description" content="Contact Echo Kushu™ about technology, cybersecurity, business analysis, partnerships or sustainable events.">
+  <link rel="stylesheet" href="style.css"><script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header"><div class="container nav-wrap">
+  <a class="brand" href="index.html"><img src="assets/logo123.png" alt="" width="48" height="48"><span><strong>Echo Kushu</strong><small>™</small></span></a>
+  <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false"><span></span><span></span><span></span><span class="sr-only">Toggle navigation</span></button>
+  <nav aria-label="Primary navigation"><ul class="nav-links" id="primary-navigation">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="technology.html">Technology &amp; Cybersecurity</a></li><li><a href="business.html">Business Development</a></li><li><a href="events.html">Events &amp; Sustainability</a></li><li><a href="projects.html">Projects &amp; Insights</a></li><li><a class="active" href="contact.html">Contact</a></li>
+  </ul></nav>
+</div></header>
+<main id="main-content">
+  <section class="page-hero"><div class="container page-hero-grid"><div><p class="eyebrow">Contact Echo Kushu</p><h1>Start a conversation.</h1></div><p>Tell us about technology, cybersecurity, organisational development, commercial partnerships or sustainable events.</p></div></section>
+  <section class="section"><div class="container contact-layout">
+    <aside><p class="eyebrow">Get in touch</p><h2>How can we help?</h2><div class="contact-details"><a href="mailto:info@echokushu.com">info@echokushu.com</a><a href="tel:+447873969610">+44 7873 969610</a><span>London, United Kingdom</span></div></aside>
+    <form id="enquiry-form" class="enquiry-form" action="https://formspree.io/f/mzzaornv" method="POST">
+      <div class="form-group"><label for="name">Name *</label><input id="name" name="name" autocomplete="name" required></div>
+      <div class="form-group"><label for="email">Email *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="form-group"><label for="organisation">Organisation</label><input id="organisation" name="organisation" autocomplete="organization"></div>
+      <div class="form-group"><label for="phone">Telephone (optional)</label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+      <div class="form-group full"><label for="enquiry-category">Enquiry category *</label><select id="enquiry-category" name="enquiry_category" required><option value="">Select a category</option><option>Website design and development</option><option>Cybersecurity</option><option>Business analysis</option><option>Organisational development</option><option>Business development</option><option>Commercial partnerships</option><option>Sustainable Futures Expo</option><option>Exhibitor enquiries</option><option>Sponsorship enquiries</option><option>General enquiry</option></select></div>
+      <div class="form-group full"><label for="message">Message *</label><textarea id="message" name="message" required></textarea></div>
+      <input type="hidden" name="_captcha" value="false">
+      <div class="form-actions"><button type="submit" class="btn btn-primary">Send enquiry</button><p id="enquiry-status" role="status" aria-live="polite"></p></div>
+    </form>
+  </div></section>
+</main>
+<footer class="site-footer"><div class="container footer-grid"><div><a class="brand footer-brand" href="index.html"><img src="assets/logo123.png" alt="" width="48" height="48"><span><strong>Echo Kushu</strong><small>™</small></span></a></div><div><h2>Explore</h2><a href="about.html">About Us</a><a href="projects.html">Projects &amp; Insights</a><a href="contact.html">Contact</a></div><div><h2>Divisions</h2><a href="technology.html">Technology &amp; Cybersecurity</a><a href="business.html">Business Development</a><a href="events.html">Events &amp; Sustainability</a></div><div><h2>Contact</h2><a href="mailto:info@echokushu.com">info@echokushu.com</a></div></div><div class="container footer-bottom"><span>© <span id="year"></span> Echo Kushu™</span><span>Responsible development through collaboration</span></div></footer>
+<script>
+const params = new URLSearchParams(location.search);
+const subject = params.get('subject');
+if (subject) {
+  const category = document.getElementById('enquiry-category');
+  [...category.options].forEach(option => { if (option.value.toLowerCase() === subject.toLowerCase()) category.value = option.value; });
+}
+</script>
+</body></html>
